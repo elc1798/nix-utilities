@@ -1,0 +1,21 @@
+#!/bin/bash
+
+while getopts "fr" option; do
+    case $opt in
+        f)
+            touch /tmp/CAPS2TAB_RAN
+            setxkbmap -option caps:none && xmodmap -e "keycode  66 = Tab ISO_Left_Tab Tab ISO_Left_Tab"
+            ;;
+        r)
+            setxkbmap -option
+            ;;
+    esac
+done
+
+if [ $OPTIND -eq 1 ]; then
+    if [ ! -f /tmp/CAPS2TAB_RAN ]; then
+        touch /tmp/CAPS2TAB_RAN;
+        setxkbmap -option caps:none && xmodmap -e "keycode  66 = Tab ISO_Left_Tab Tab ISO_Left_Tab";
+    fi
+fi
+
