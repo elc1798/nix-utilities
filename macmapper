@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Map the right Super and Alt keys to right click. Handy
+
+xmodmap -e "keycode 108 = Pointer_Button3"
+xmodmap -e "keycode 134 = Pointer_Button3"
+
+xkbset m
+xkbset exp m
